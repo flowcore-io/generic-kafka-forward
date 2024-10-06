@@ -1,0 +1,38 @@
+{
+  "name": "generic-kafka-forward-2",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build --compile --minify --sourcemap --outfile=dist/app src/index.ts",
+    "lint": "bun run biome lint",
+    "format": "bun run biome format"
+  },
+  "dependencies": {
+    "@elysiajs/bearer": "^1.1.1",
+    "@sinclair/typebox": "^0.33.7",
+    "dayjs": "^1.11.12",
+    "drizzle-orm": "^0.33.0",
+    "elysia": "^1.1.9",
+    "kafkajs": "^2.2.4",
+    "rou3": "^0.5.1",
+    "winston": "^3.14.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@faker-js/faker": "^8.4.1",
+    "@types/bun": "latest",
+    "env-cmd": "^10.1.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "overrides": {
+    "@sinclair/typebox": "^0.33.7"
+  },
+  "trustedDependencies": ["@biomejs/biome"]
+}
