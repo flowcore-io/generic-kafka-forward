@@ -14,10 +14,12 @@
   "dependencies": {
     "@elysiajs/bearer": "^1.1.1",
     "@sinclair/typebox": "^0.33.7",
+    "@types/lodash": "^4.17.10",
     "dayjs": "^1.11.12",
     "drizzle-orm": "^0.33.0",
     "elysia": "^1.1.9",
     "kafkajs": "^2.2.4",
+    "lodash": "^4.17.21",
     "rou3": "^0.5.1",
     "winston": "^3.14.1",
     "zod": "^3.23.8"

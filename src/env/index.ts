@@ -14,6 +14,7 @@ const envSchema = z.object({
   KAFKA_PASSWORD: z.coerce.string().default(""),
   KAFKAJS_NO_PARTITIONER_WARNING: z.coerce.boolean().default(true),
   KAFKA_AWS_AUTHORIZATION_IDENTITY: z.coerce.string().default(""),
+  KAFKA_KEY_PATH: z.string().default("key"),
 
   PORT: z.coerce.number().default(3000),
 })
