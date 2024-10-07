@@ -1,8 +1,8 @@
 {
-  "name": "generic-kafka-forward-2",
+  "name": "generic-kafka-forward",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Forwards messages to kafka from Flowcore",
+  "author": "Brian Bischoff <brian@flowcore.com>",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
