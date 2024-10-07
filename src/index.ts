@@ -1,8 +1,8 @@
 // src/server/index.ts
 import env from "@/env"
-import { server } from "@/server"
-import { createLogger } from "@/lib/logger"
 import { connectKafka } from "@/lib/kafka"
+import { createLogger } from "@/lib/logger"
+import { server } from "@/server"
 
 const logger = createLogger("index")
 

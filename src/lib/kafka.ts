@@ -1,6 +1,6 @@
+import env from "@/env"
 // src/lib/kafka.ts
-import {Kafka, type KafkaConfig, type SASLOptions} from 'kafkajs'
-import env from '@/env'
+import { Kafka, type KafkaConfig } from "kafkajs"
 
 const kafkaConfig: KafkaConfig = {
   clientId: env.KAFKA_CLIENT_ID,
@@ -8,7 +8,7 @@ const kafkaConfig: KafkaConfig = {
   ssl: env.KAFKA_SSL,
 }
 
-if (env.KAFKA_SASL_MECHANISM == "plain") {
+if (env.KAFKA_SASL_MECHANISM === "plain") {
   kafkaConfig.sasl = {
     mechanism: env.KAFKA_SASL_MECHANISM,
     username: env.KAFKA_USERNAME,
@@ -16,16 +16,14 @@ if (env.KAFKA_SASL_MECHANISM == "plain") {
   }
 }
 
-if (env.KAFKA_SASL_MECHANISM == "aws") {
+if (env.KAFKA_SASL_MECHANISM === "aws") {
   kafkaConfig.sasl = {
     mechanism: env.KAFKA_SASL_MECHANISM,
     authorizationIdentity: env.KAFKA_AWS_AUTHORIZATION_IDENTITY,
     secretAccessKey: env.KAFKA_PASSWORD,
-    accessKeyId: env.KAFKA_USERNAME
+    accessKeyId: env.KAFKA_USERNAME,
   }
 }
-
-
 
 const kafka = new Kafka(kafkaConfig)
 

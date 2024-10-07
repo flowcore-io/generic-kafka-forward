@@ -1,8 +1,8 @@
+import { producer } from "@/lib/kafka"
 // src/server/routes/transform/transform.ts
 import { createLogger } from "@/lib/logger"
 import { Elysia, t } from "elysia"
 import { SourceEventDto } from "./transform.dto"
-import { producer } from "@/lib/kafka"
 
 export const logger = createLogger("transform")
 
@@ -28,10 +28,8 @@ export const transform = new Elysia({
 
       // Send message to Kafka
       await producer.send({
-        topic: 'your-topic',
-        messages: [
-          { value: JSON.stringify(payload) },
-        ],
+        topic: "your-topic",
+        messages: [{ value: JSON.stringify(payload) }],
       })
     },
     {

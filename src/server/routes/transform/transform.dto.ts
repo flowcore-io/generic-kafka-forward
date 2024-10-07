@@ -1,4 +1,4 @@
-import { t, type Static } from "elysia"
+import { type Static, t } from "elysia"
 
 export const SourceEventDto = t.Object({
   aggregator: t.String({ description: "Aggregator name (e.g. 'flow-type.name.0')" }),
