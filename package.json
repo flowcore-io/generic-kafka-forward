@@ -1,6 +1,6 @@
 {
   "name": "generic-kafka-forward",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Forwards messages to kafka from Flowcore.",
   "author": "Brian Bischoff <brian@flowcore.com>",
   "private": true,
@@ -36,5 +36,7 @@
   "overrides": {
     "@sinclair/typebox": "^0.33.7"
   },
-  "trustedDependencies": ["@biomejs/biome"]
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
 }
