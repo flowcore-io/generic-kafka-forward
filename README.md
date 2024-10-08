@@ -49,3 +49,12 @@ bun dev
 # Run tests
 bun test
 ```
+
+## Deployment
+
+Copy the ./services/example-flowcore-deployment.yaml file to ./services/flowcore-deployment.yaml and edit the file to
+match your environment.
+
+```bash
+flowcore scenario apply -f services/flowcore-deployment.yaml
+```

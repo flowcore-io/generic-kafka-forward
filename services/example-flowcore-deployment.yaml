@@ -1,0 +1,61 @@
+tenant: my-tenant
+scenario:
+  description: 'Scenario description'
+  name: my-scenario
+  transformers:
+    my-transformer:
+      size: "SMALL"
+      concurrency: 1
+      shell: flowcoreio/adapter-nodejs-transformer-shell:2.7.4-bun
+      blueprint:
+        entrypoint: index.js
+        runtime: bun
+        artifactUrl: >-
+          https://github.com/flowcore-io/generic-kafka-forward/releases/download/v1.1.1/generic-kafka-forward-1.1.1.zip
+        processTimeout: 30000 # 5 seconds
+      dataCore: my-datacore
+      processingTimeout: 30000 # 5 seconds
+      description: Push the data to confluent
+      events:
+        - event.0
+      flowType: flowtype.0
+      parameters:
+        - name: LOG_LEVEL
+          type: manual
+          value: "debug"
+        - name: KAFKA_SASL_MECHANISM
+          type: manual
+          value: plain
+        - name: KAFKA_SSL
+          type: manual
+          value: 'true'
+        - name: KAFKAJS_NO_PARTITIONER_WARNING
+          type: manual
+          value: '1'
+        - name: KAFKA_GROUP_ID
+          type: manual
+          value: group-id
+        - name: KAFKA_CLIENT_ID
+          type: manual
+          value: flowcore-transformer
+        - name: KAFKA_KEY_PATH
+          type: manual
+          value: path.to.key
+        - name: KAFKA_IGNORE_EMPTY_KEY
+          type: manual
+          value: 'true'
+        - name: KAFKA_ADD_FLOWCORE_HEADERS
+          type: manual
+          value: 'true'
+        - name: KAFKA_USERNAME
+          type: variable
+          value: my-variable
+        - name: KAFKA_PASSWORD
+          type: secret
+          value: my-secret
+        - name: KAFKA_TOPIC
+          type: manual
+          value: incoming-messages
+        - name: KAFKA_BROKER
+          type: variable
+          value: my-broker-variable-name
