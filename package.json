@@ -36,7 +36,5 @@
   "overrides": {
     "@sinclair/typebox": "^0.33.7"
   },
-  "trustedDependencies": [
-    "@biomejs/biome"
-  ]
+  "trustedDependencies": ["@biomejs/biome"]
 }
