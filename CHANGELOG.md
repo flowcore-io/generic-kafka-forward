@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.1.1](https://github.com/flowcore-io/generic-kafka-forward/compare/v1.1.0...v1.1.1) (2024-10-08)
+
+
+### Bug Fixes
+
+* Formatting ([d9aed3a](https://github.com/flowcore-io/generic-kafka-forward/commit/d9aed3a8b9e41ea739780bc8e0a7715286acbb18))
+* Hotfix bun build ([76a6df6](https://github.com/flowcore-io/generic-kafka-forward/commit/76a6df67d548b8576ebba046ead3026b00fd0773))
+* Hotfix bun build ([99cbc70](https://github.com/flowcore-io/generic-kafka-forward/commit/99cbc7078cb5a979aeea7e40c2785227113ed772))
+* Hotfix bun build 2 ([416b1ac](https://github.com/flowcore-io/generic-kafka-forward/commit/416b1ac9bd7e27e50efd01489bf6507219a517d5))
+
 ## [1.1.0](https://github.com/flowcore-io/generic-kafka-forward/compare/v1.0.0...v1.1.0) (2024-10-08)
 
 
