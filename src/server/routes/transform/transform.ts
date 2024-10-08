@@ -27,13 +27,30 @@ export const transform = new Elysia({
       // const result = Value.Parse(ExamplePayloadDto, payload)
       // Extract the key from the payload using the configurable path
       const keyPath = env.KAFKA_KEY_PATH
-      const key = get(event, keyPath)
-      console.log("transform", event)
+      const key_value = get(payload, keyPath)
+
+      if (!key_value) {
+        if (env.KAFKA_IGNORE_EMPTY_KEY) {
+          logger.warn(`No key found in the payload, using path: '${keyPath}'`)
+          return
+        }
+      }
+
+      const headers: {
+        [p: string]: string
+      } = {}
+
+      if (env.KAFKA_ADD_FLOWCORE_HEADERS) {
+        headers["x-flowcore-event-source"] = `${event.dataCore}/${event.aggregator}/${event.eventType}/${event.eventId}`
+        headers["x-flowcore-timeBucket"] = event.timeBucket
+      }
+
+      logger.debug(`Sending message to Kafka topic: ${env.KAFKA_TOPIC} with key: ${key_value}`)
 
       // Send message to Kafka
-      await producer.send({
-        topic: "your-topic",
-        messages: [{ key: key, value: JSON.stringify(payload) }],
+      return await producer.send({
+        topic: env.KAFKA_TOPIC,
+        messages: [{ key: key_value, value: JSON.stringify(payload), headers }],
       })
     },
     {

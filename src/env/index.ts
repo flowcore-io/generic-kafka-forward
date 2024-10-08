@@ -15,6 +15,8 @@ const envSchema = z.object({
   KAFKAJS_NO_PARTITIONER_WARNING: z.coerce.boolean().default(true),
   KAFKA_AWS_AUTHORIZATION_IDENTITY: z.coerce.string().default(""),
   KAFKA_KEY_PATH: z.string().default("key"),
+  KAFKA_IGNORE_EMPTY_KEY: z.coerce.boolean().default(false),
+  KAFKA_ADD_FLOWCORE_HEADERS: z.coerce.boolean().default(false),
 
   PORT: z.coerce.number().default(3000),
 })
@@ -22,7 +24,7 @@ const envSchema = z.object({
 const env = envSchema.safeParse(process.env)
 
 if (!env.success) {
-  console.error("Missing environment variables", env.error.flatten().fieldErrors)
+  console.error("Missing environment variables.", env.error.flatten().fieldErrors)
   process.exit(1)
 }
 
