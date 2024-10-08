@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/flowcore-io/generic-kafka-forward/compare/v1.1.1...v1.1.2) (2024-10-08)
+
+
+### Bug Fixes
+
+* Added example deployment config ([b145d5b](https://github.com/flowcore-io/generic-kafka-forward/commit/b145d5b4c6d8dcc8c771e448a3edf3f94c7f7a02))
+
 ## [1.1.1](https://github.com/flowcore-io/generic-kafka-forward/compare/v1.1.0...v1.1.1) (2024-10-08)
 
 
