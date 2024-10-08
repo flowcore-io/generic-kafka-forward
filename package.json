@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "bun run --watch src/index.ts",
-    "build": "bun build --compile --minify --sourcemap --outfile=dist/app src/index.ts",
+    "build": "bun build --outdir=dist --minify --target=bun --sourcemap src/index.ts",
     "lint": "bun run biome lint",
     "format": "bun run biome format"
   },
